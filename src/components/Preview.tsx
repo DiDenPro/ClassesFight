@@ -1,3 +1,5 @@
+import { Preview3D } from "./Preview3D";
+
 interface Props{
     img: string;
 }
@@ -5,7 +7,7 @@ interface Props{
 export const Preview: React.FC<Props> = ({ img }) => {
     return (
         <section className="preview">
-            <img src={img} alt="Character Preview" />
+            <Preview3D />
         </section>
     )
 };
