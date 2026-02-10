@@ -1,0 +1,89 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: minmax(25%, 30%) minmax(35%, 40%) minmax(25%, 30%);
+  height: 95vh;
+  gap: 12px;
+  padding: 16px;
+  color: #fff;
+  font-family: "Mojang", monospace;
+  word-spacing: 8px;
+}
+
+.sidebar,
+.center,
+.preview {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 16px;
+}
+.sidebar {
+  overflow-y: auto;
+}
+
+.sidebar-title,
+.tab{
+  color:rgb(235, 50, 235);
+}
+
+.active{
+  color: rgb(255, 255, 255);
+}
+
+.selected{
+  background-color: rgba(255, 119, 170, 0.4);
+}
+
+.character-item {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.character-item:active {
+  background-color: rgba(255, 119, 170, 0.4);
+}
+
+.tab {
+  flex: 1;
+  padding: 8px;
+  cursor: pointer;
+}
+.tab:active {
+  overflow-y: auto;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview img{
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.tab-title{
+  color: rgb(255, 170, 0);
+  font-weight: bold;
+}
+
+.talent-description{
+  color: rgb(200, 200, 200);
+  text-align: justify;
+}
+
+.talent-details{
+  color: rgb(30, 125, 220);
+  
+}
