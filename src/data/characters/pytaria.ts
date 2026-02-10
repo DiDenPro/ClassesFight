@@ -23,18 +23,19 @@ export const pytaria: CharacterData = {
             name: "Thunder Strike",
             type: "Active",
             description: "Pytaria strikes her enemy with a powerful electrical attack, dealing damage and stunning them for a short duration.",
-            details: "Damage: 150% of attack. Stun duration: 2 seconds. Cooldown: 8 seconds."
+            details: "Damage: 150% | Stun duration: 2s | Cooldown: 8s"
         },
         {
             name: "Static Charge",
             type: "Passive",
             description: "Pytaria's basic attacks build up static electricity, increasing her attack speed and damage with each hit.",
-            details: "Attack speed bonus: 5% per stack. Max stacks: 5."
+            details: "Attack speed bonus: 5% per stack | Max stacks: 5"
         },
         {
             name: "Storm's Fury",
             type: "Ultimate",
-            description: "Pytaria unleashes a devastating storm, dealing massive damage to all enemies in the area and leaving them stunned for a short duration."
+            description: "Pytaria unleashes a devastating storm, dealing massive damage to all enemies in the area and leaving them stunned for a short duration.",
+            details: "N/A"
         }
     ],
     previewImg: preview

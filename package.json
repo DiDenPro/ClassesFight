@@ -1,7 +1,7 @@
 {
-  "name": "classes-fight-areana",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ClassesFight",
+  "version": "1.0.0",
+  "private": false,
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
@@ -43,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "The official site of ClassesFightArena",
+  "main": "index.js",
+  "repository": "https://github.com/DiDenPro/ClassesFight.git",
+  "author": "DiDenPro",
+  "license": "MIT"
 }

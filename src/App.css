@@ -83,6 +83,38 @@
   text-align: justify;
 }
 
-.talent-details{
-  color: rgb(30, 125, 220);
+.tooltip {
+    position: absolute;
+    background: #020c21; /* тёмный фон */
+    border: 2px solid #fff; /* белая рамка */
+    border-radius: 4px;
+    padding: 4px 6px;
+    pointer-events: none;
+    z-index: 999;
+    color: #adadad;
+    min-width: 250px;
+    white-space: pre-line;
+    line-height: 1.2;
+    box-shadow: 3px 3px 0 #000; /* эффект пиксельной тени */
+}
+
+.tooltip p {
+    margin: 0;
+    color: #fff;
+}
+
+.tooltip-line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tooltip-label {
+    text-align: left;
+    color: #fff;
+}
+
+.tooltip-value {
+    text-align: right;
+    color: #a0ffa0; /* можно цвет под эффект Minecraft */
 }

@@ -1,5 +1,5 @@
 import { CharacterData } from "../data/characters";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 interface Props{
     character: CharacterData;
@@ -7,6 +7,8 @@ interface Props{
 
 export const Tabs: React.FC<Props> = ({character}) =>{
     const [tab, setTab] = useState<"lore" | "stats" | "talents">("lore");
+    const [tooltip, setTooltip] = useState<{text:string; x: number; y: number} | null>(null);
+    const tabContentRef = useRef<HTMLDivElement>(null);
 
     return(
         <main className="center">
@@ -28,7 +30,9 @@ export const Tabs: React.FC<Props> = ({character}) =>{
                 </div>
             </div>
 
-            <div className="tab-content">
+            <div 
+                ref={tabContentRef}
+                className="tab-content">
                 {tab === "lore" && <p>{character.lore}</p>}
                 
                 {tab === "stats" && (
@@ -45,13 +49,44 @@ export const Tabs: React.FC<Props> = ({character}) =>{
 
                 {tab === "talents" && 
                     character.talents.map(t =>(
-                        <div key={t.name}>
+                        <div
+                            key={t.name}
+                            className="talent"
+                            onMouseMove={e => {
+                                const rect = tabContentRef.current!.getBoundingClientRect();
+                                setTooltip({
+                                text: t.details || "",
+                                x: e.clientX - rect.left + 25, // координаты относительно блока
+                                y: e.clientY - rect.top + 75,
+                                });
+                            }}
+                            onMouseLeave={() => setTooltip(null)}
+                        >
                             <h3 className="tab-title">{t.name}</h3>
                             <p className="talent-description">{t.description}</p>
-                            <p className="talent-details">{t.details && <small>{t.details}</small>}</p>
+                            <br />
                         </div>
                     ))
                 }
+                {tooltip && (
+                    <div
+                        className={`tooltip`}
+                        style={{
+                            top: tooltip.y+5,
+                            left: tooltip.x+5,
+                        }}
+                    >
+                        {tooltip.text.split("|").map((line, i) =>{
+                            const [label, value] = line.split(":");
+                            return (
+                                <div key={i} className="tooltip-line">
+                                    <span className="tooltip-label">{label.trim()}:</span>
+                                    <span className="tooltip-value">{value?.trim()}</span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
             </div>
         </main>
     );
