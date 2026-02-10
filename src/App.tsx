@@ -19,7 +19,7 @@ function App(){
         onSelect={setCurrent}
       />
       <Tabs character={current}/>
-      <Preview img={current.previewImg} />
+      <Preview />
     </div>
   );
 }

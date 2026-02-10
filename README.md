@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+# ClassesFightArena
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Веб-приложение на **React + TypeScript** для просмотра персонажей проекта **ClassesFightArena**   с 3D-превью и подробной информацией о каждом персонаже.
 
-## Available Scripts
+Проект используется как **wiki и визуальный справочник** по персонажам самописного Minecraft-плагина.
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+## 🎯 Назначение проекта
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Портфолио-проект  
+- Внутренний инструмент для проекта **ClassesFightArena**
+- Визуальная wiki с упором на 3D-представление персонажей
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## 🧩 Возможности
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Просмотр персонажей проекта
+- 3D-превью персонажей
+- Переключение вкладок:
+  - Lore
+  - Stats
+  - Talents
+- Подсказки при наведении
+- Расширяемая структура данных персонажей
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧪 Технологии
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**
+- **TypeScript**
+- **React Three Fiber**
+- **Three.js**
+- **CSS**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+## 🗂 Структура проекта
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+src/
+├─ components/
+│ ├─ Preview.tsx # Блок превью для просмотра персонажа
+│ ├─ Preview3D.tsx # Подгрузка 3D модели
+│ ├─ helper.tsx # Вспомогательные утилиты
+│ ├─ Sidebar.tsx # Блок для выбора персонажа
+│ └─ Tabs.tsx # Блок для просмотра информации о персонаже
+│
+├─ models/
+│ └─ DiDenPro.tsx # 3D-модель персонажа
+│
+├─ data/
+│ ├─ characters.ts # Общие интерфейсы персонажей
+│ └─ characters/
+|   └─*.ts # Отдельные файлы с данными персонажей
+│
+├─ App.tsx # Главный компонент
+├─ index.tsx # Точка входа
+└─ App.css # Стили проекта
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📦 Данные персонажей
 
-## Learn More
+- Каждый персонаж хранится в **собственном `.ts` файле**
+- Все персонажи реализуют **общий интерфейс**, описанный в `characters.ts`
+- Структура данных легко расширяется под новые параметры
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Установка и запуск
+
+Проект использует **yarn**.
+
+```bash
+yarn install
+yarn start
+После запуска приложение будет доступно по адресу:
+http://localhost:3000
+
+🛣 Roadmap
+ Улучшение UI
+
+ Расширение данных персонажей
+
+ Поддержка дополнительной экипировки
+
+ Оптимизация 3D-сцены
+
+ Подготовка к интеграции с внешними источниками данных
+
+👤 Credits
+Автор проекта: DiDenPro
+Проект создаётся для плагина ClassesFightArena
+
+📄 Лицензия
+Лицензия пока не определена.
