@@ -118,3 +118,53 @@
     text-align: right;
     color: #a0ffa0; /* можно цвет под эффект Minecraft */
 }
+
+.stats-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+  "health attack defence"
+  ". speed ."
+  "critChance critDamage attackSpeed";
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: rgba(30, 30, 30, 0.85);
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: #888;
+}
+
+.stat-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10xp;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+.health { grid-area: health; }
+.attack { grid-area: attack; }
+.defence { grid-area: defence; }
+.speed { grid-area: speed; }
+.critChance { grid-area: critChance; }
+.critDamage { grid-area: critDamage; }
+.attackSpeed { grid-area: attackSpeed; }

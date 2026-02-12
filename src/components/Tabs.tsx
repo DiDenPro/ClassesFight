@@ -9,6 +9,15 @@ export const Tabs: React.FC<Props> = ({character}) =>{
     const [tab, setTab] = useState<"lore" | "stats" | "talents">("lore");
     const [tooltip, setTooltip] = useState<{text:string; x: number; y: number} | null>(null);
     const tabContentRef = useRef<HTMLDivElement>(null);
+    const statConfig = [
+        { key: "health", label: "Health", icon: "/icons/health.png"},
+        { key: "attack", label: "Attack", icon: "/icons/attack.png"},
+        { key: "defence", label: "Defence", icon: "/icons/defence.png"},
+        { key: "speed", label: "Speed", icon: "/icons/speed.png"},
+        { key: "critDamage", label: "Crit Damage", icon: "/icons/critDamage.png"},
+        { key: "critChance", label: "Crit Chance", icon: "icons/critChance.png"},
+        { key: "attackSpeed", label: "Attack Speed", icon: "/icons/attackSpeed.png"}
+    ];
 
     return(
         <main className="center">
@@ -36,15 +45,15 @@ export const Tabs: React.FC<Props> = ({character}) =>{
                 {tab === "lore" && <p>{character.lore}</p>}
                 
                 {tab === "stats" && (
-                    <ul>
-                        <li>Health: {character.stats.health}</li>
-                        <li>Attack: {character.stats.attack}</li>
-                        <li>Defence: {character.stats.defence}</li>
-                        <li>Speed: {character.stats.speed}</li>
-                        <li>Crit Chance: {character.stats.critChance}</li>
-                        <li>Crit Damage: {character.stats.critDamage}</li>
-                        <li>Attack Speed: {character.stats.attackSpeed}</li>
-                    </ul>
+                    <div className="stats-layout">
+                        {statConfig.map(stat =>(
+                            <div key={stat.key} className={`stat-card ${stat.key}`}>
+                                <img src={stat.icon} alt={stat.label} />
+                                <span className="stat-label">{stat.label}</span>
+                                <span className="stat-value">{character.stats[stat.key as keyof typeof character.stats]}</span>
+                            </div>
+                        ))}
+                    </div>
                 )}
 
                 {tab === "talents" && 
