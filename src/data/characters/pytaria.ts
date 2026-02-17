@@ -38,5 +38,33 @@ export const pytaria: CharacterData = {
             details: "N/A"
         }
     ],
-    previewImg: preview
+    previewImg: preview,
+
+    // ─── Броня Pytaria ────────────────────────────────────────────────────────
+    armor: {
+        chestplate: {
+            texture: "/armor/pytaria_chestplate.png", // путь от /public
+            material: "diamond",
+            trim: {
+                pattern: "bolt",
+                material: "amethyst",
+            },
+        },
+        leggings: {
+            texture: "/armor/pytaria_leggings.png",
+            material: "diamond",
+            trim: {
+                pattern: "bolt",
+                material: "amethyst",
+            },
+        },
+        boots: {
+            texture: "/armor/pytaria_boots.png",
+            material: "diamond",
+            trim: {
+                pattern: "bolt",
+                material: "amethyst",
+            },
+        },
+    },
 };

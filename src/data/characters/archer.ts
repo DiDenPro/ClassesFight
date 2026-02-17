@@ -32,5 +32,28 @@ export const archer: CharacterData = {
             details: "A powerful attack that can deal massive damage."
         }
     ],
-    previewImg: preview
-}
+    previewImg: preview,
+
+    // ─── Броня Archer ─────────────────────────────────────────────────────────
+    armor: {
+        chestplate: {
+            texture: "/armor/archer_chestplate.png",
+            material: "leather",
+            leatherColor: "#8B4513", // коричневый цвет кожи
+            trim: {
+                pattern: "wild",
+                material: "gold",
+            },
+        },
+        leggings: {
+            texture: "/armor/archer_leggings.png",
+            material: "leather",
+            leatherColor: "#8B4513",
+        },
+        boots: {
+            texture: "/armor/archer_boots.png",
+            material: "leather",
+            leatherColor: "#8B4513",
+        },
+    },
+};
