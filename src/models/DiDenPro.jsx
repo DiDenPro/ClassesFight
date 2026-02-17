@@ -52,4 +52,4 @@ export function DiDenPro(props) {
   )
 }
 
-useGLTF.preload('/Steve-model-test.gltf')
+useGLTF.preload('/DiDenPro/DiDenPro.gltf')
